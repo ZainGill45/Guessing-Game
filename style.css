@@ -15,7 +15,7 @@ body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
   background-color: #222;
-  /* background-color: #60b347; */
+  transition: background-color ease-in-out 0.35s;
 }
 
 /* LAYOUT */
@@ -42,7 +42,8 @@ main {
 
 .right {
   width: 52rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 5%;
 }
 
 /* ELEMENTS STYLE */
