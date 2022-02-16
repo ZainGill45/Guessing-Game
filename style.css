@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+:root {
+  --spacing: 3rem;
+}
 
 * {
   margin: 0;
@@ -12,75 +16,73 @@ html {
 }
 
 body {
-  font-family: 'Press Start 2P', sans-serif;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Press Start 2P", sans-serif;
   color: #eee;
   background-color: #222;
   transition: background-color ease-in-out 0.35s;
 }
 
-/* LAYOUT */
-header {
-  position: relative;
-  height: 35vh;
-  border-bottom: 7px solid #eee;
-}
-
-main {
-  height: 65vh;
-  color: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.left {
-  width: 52rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.right {
-  width: 52rem;
-  font-size: 2.5rem;
-  margin-bottom: 5%;
-}
-
-/* ELEMENTS STYLE */
 h1 {
-  font-size: 4rem;
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+  font-size: 3rem;
   text-align: center;
+}
+
+.container {
   position: absolute;
   width: 100%;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 48%;
+  transform: translateY(-50%);
+}
+
+.number-container {
+  position: relative;
+}
+
+.number-container span {
+  width: 100%;
+  border: 4px solid azure;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -10;
 }
 
 .number {
+  display: block;
   background: #eee;
   color: #333;
   font-size: 6rem;
   width: 15rem;
   padding: 3rem 0rem;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
+  margin: auto;
 }
 
 .between {
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+  text-align: center;
   font-size: 1.4rem;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
 }
 
 .again {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
+  display: block;
+  margin: auto;
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
+.check {
+  display: block;
+  margin: auto;
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
 }
 
 .guess {
@@ -88,12 +90,16 @@ h1 {
   border: 4px solid #eee;
   font-family: inherit;
   color: inherit;
-  font-size: 5rem;
-  padding: 2.5rem;
-  width: 25rem;
-  text-align: center;
+  font-size: 7rem;
+  padding: 1rem;
   display: block;
-  margin-bottom: 3rem;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
 }
 
 .btn {
@@ -110,11 +116,63 @@ h1 {
   background-color: #ccc;
 }
 
-.message {
-  margin-bottom: 8rem;
-  height: 3rem;
+.label-score {
+  text-align: center;
+  margin-bottom: var(--spacing);
+  font-size: 2rem;
 }
 
-.label-score {
-  margin-bottom: 2rem;
+.label-highscore {
+  text-align: center;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    position: absolute;
+    width: 100%;
+    top: 2%;
+    transform: translateY(0%);
+  }
+  .top-container {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+  }
+  .again {
+    margin: 0;
+    margin-left: 2rem;
+  }
+  .between {
+    margin: 0;
+    margin-right: 2rem;
+  }
+  h1 {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    font-size: 4rem;
+  }
+  .bottom-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 7rem;
+  }
+  .left {
+    width: 50%;
+    margin-left: 7rem;
+  }
+  .right {
+    width: 50%;
+    align-self: center;
+    margin-right: 7rem;
+  }
+  .label-score {
+    font-size: 2.5rem;
+  }
+  .label-highscore {
+    font-size: 2.5rem;
+  }
+  .guess {
+    width: 28rem;
+  }
 }

@@ -6,7 +6,7 @@ const highColor = "#f03e3e";
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 0;
-let highscore = 0;
+let highScore = 0;
 let firstRun = true;
 let gameOver = false;
 
@@ -21,19 +21,21 @@ const CheckGuess = () => {
   const guess = Number(document.querySelector('.guess').value);
   document.querySelector('.guess').value = null;
 
-  if (!guess) {
+  if (!guess)
     displayMessage('Not A Valid Input');
-  } else if (guess === secretNumber) {
+
+  document.querySelector('.number').innerHTML = guess;
+
+  if (guess === secretNumber) {
     score++;
     displayMessage('Nice You Got It');
     document.querySelector('.number').textContent = secretNumber;
 
     document.querySelector('body').style.backgroundColor = successColor;
-    document.querySelector('.number').style.width = '30rem';
     document.querySelector('.score').textContent = score;
-    if (score < highscore || firstRun) {
-      highscore = score;
-      document.querySelector('.highscore').textContent = highscore;
+    if (score < highScore || firstRun) {
+      highScore = score;
+      document.querySelector('.high-score').textContent = highScore;
       firstRun = false;
     }
     gameOver = true;
